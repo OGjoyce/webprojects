@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+ 
+    <div class="header-menu">
+        <ion-grid>
+          <ion-row>
+            <ion-col>
+                <ion-icon button (click)="handleHome()" name="home" style="color: antiquewhite;"></ion-icon>
+            </ion-col>
+            <!-- <ion-col>
+                <ion-icon button (click)="handleAutenticar()" name="done-all"  style="color: antiquewhite;"></ion-icon>
+            </ion-col> -->
+            <ion-col>
+                <ion-icon button (click)="buscarServicio()" name="search"  style="color: antiquewhite;"></ion-icon>
+            </ion-col>
+            <ion-col>
+                <ion-icon button (click)="ofrecerServicio()" name="add-circle-outline" style="color: antiquewhite;"></ion-icon>
+            </ion-col>
+            <ion-col>
+                <ion-icon button (click)="contactos()" name="people" style="color: antiquewhite;"></ion-icon>
+            </ion-col>
+            <ion-col>
+                <ion-icon (click)="profile(this.key)"  name="person" style="color: antiquewhite;"></ion-icon>
+            </ion-col>
+            <ion-col>
+              <ion-icon button (click)="logout()" name="log-out" style="color:crimson;"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+    </div>
+       
+
+  </ion-toolbar>
+ 
+</ion-header>
+
+<ion-content >
+
+  <div class="opening">
+      
+      <div style="width: 80%; margin-left: 15%; margin-top: 10%;">
+        <ion-text style="color:aliceblue;"> 
+          <h1 >¡Bienvenido a Hydrax !</h1>
+        </ion-text>
+      </div>
+      <div style="margin-left: 30%; align-content: center; ">
+        <ion-img src="./assets/hydrax_logo.png"  width="50" height="50"></ion-img>
+    </div>
+
+
+  </div>
+
+</ion-content>

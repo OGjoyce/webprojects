@@ -1,0 +1,12 @@
+@import "./home/home.page.scss";
+
+.getstart {
+
+    background-image: url('https://www.awwwards.com/awards/images/2014/09/threejs-img8.jpg');
+    // background: url('../../img/getstart.png');
+    background-repeat: no-repeat;
+    background-size:cover;
+   }
+   .new-background-color{
+    --background: #009694;
+}

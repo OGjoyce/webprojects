@@ -1,0 +1,57 @@
+<ion-header>
+    <ion-toolbar>
+   
+      <div class="header-menu">
+          <ion-grid>
+            <ion-row>
+              <ion-col>
+                  <ion-icon button (click)="handleHome()" name="home" style="color: antiquewhite;"></ion-icon>
+              </ion-col>
+              <!-- <ion-col>
+                  <ion-icon button (click)="handleAutenticar()" name="done-all"  style="color: antiquewhite;"></ion-icon>
+              </ion-col> -->
+              <ion-col>
+                  <ion-icon button (click)="buscarServicio()" name="search"  style="color: antiquewhite;"></ion-icon>
+              </ion-col>
+              <ion-col>
+                  <ion-icon button (click)="ofrecerServicio()" name="add-circle-outline" style="color: antiquewhite;"></ion-icon>
+              </ion-col>
+              <ion-col>
+                  <ion-icon button (click)="contactos()" name="people" style="color: antiquewhite;"></ion-icon>
+              </ion-col>
+              <ion-col>
+                  <ion-icon (click)="profile(this.key)"  name="person" style="color: antiquewhite;"></ion-icon>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+      </div>
+         
+  
+    </ion-toolbar>
+   
+  </ion-header>
+
+<ion-content>
+  <div class="contact-list"> 
+    <ion-list style="--ion-background-color: #1e1e1e;">
+       
+        <ion-item style="--ion-background-color: #1e1e1e;" *ngFor="let chat of chatData"  slot="start"  lines="none" (click)="chatTo(chat.idUser, chat.user, chat.productId)">
+            <div class="UserimgSection">
+                <ion-avatar class="chatImage" (click)="chatTo(chat.idUser, chat.user, chat.productId)">
+                  <ion-img [src]="imagevar"></ion-img>
+                  <span class="onlineOffline_icon" [ngStyle]="{'background-color': '#4cd137'}"></span>
+                </ion-avatar>
+              </div>
+              <div class="usernameSection" padding-start padding>
+                  <h5>
+                    <ion-icon  *ngIf="chat.group" name="people" color="medium"></ion-icon>
+                    <ion-label style="color:aliceblue;"> {{chat.Nombres}}</ion-label>
+                    
+                    </h5>
+                  <p class="descText" no-margin no-padding>Asunto: {{chat.newKey}}</p>
+                </div>
+          </ion-item>
+    </ion-list>
+        
+    </div>
+</ion-content>

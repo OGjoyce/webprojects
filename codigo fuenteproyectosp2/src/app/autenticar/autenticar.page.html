@@ -1,0 +1,27 @@
+<ion-header>
+    <head>
+        <script src="cordova.js"></script>
+    </head>
+
+      <ion-toolbar class="new-background-color">
+          <ion-icon button (click)="back()" size="small" name="arrow-back" slot="start" style="color: rgb(19, 37, 204);"></ion-icon>
+    <ion-title>Autenticar usuario</ion-title>
+  </ion-toolbar>
+
+  
+</ion-header>
+
+<ion-content>
+  <ion-item style="margin-top: 30%;">
+
+  <ion-button (click)="openCam()" >Tomar foto</ion-button>
+
+  </ion-item>
+  <ion-item>
+      <img [src]="currentImage" *ngIf="currentImage">
+  </ion-item>
+  <ion-item>
+      <ion-button color="success" (click)="upload()" >Verificar</ion-button>
+  </ion-item>
+</ion-content>
+

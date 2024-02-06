@@ -1,0 +1,33 @@
+<ion-header  >
+  <ion-toolbar class="new-background-color">
+      <ion-icon button (click)="back()"  slot='start' name="arrow-back" style="color:ghostwhite"></ion-icon>
+      <ion-avatar slot="start" style="width: 32px; height: 32px;">
+          <ion-img [src]="imagevar" style=" width: 32px; height: 32px;"></ion-img>
+        </ion-avatar> 
+        <ion-item slot="start" class="new-background-color"><label style="color:ghostwhite" >{{username}} </label></ion-item>
+        <ion-item slot="end" class="new-background-color"> <ion-icon name="hand" style="color:forestgreen;" (click)="handleFinish()"> Finalizar</ion-icon>  </ion-item>
+        
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-list *ngFor="let mensaje of mensajes" style="background-color: transparent; margin-bottom: 20%;">
+  <ion-item  *ngIf=" mensaje.personOne == this.sender" style="--ion-background-color: #292929; color:aliceblue; margin-left: 10%; margin-right: 2%; border-radius: 25px; border: 2px solid #8562b0;">
+    <ion-text  slot="start"  >{{mensaje.message}}</ion-text>
+  </ion-item>
+  <ion-item *ngIf=" mensaje.personOne != this.sender"  style="--ion-background-color: #292929;  color:aliceblue; margin-right: 10%; margin-left: 2%; border-radius: 25px; border: 2px solid #cc97de;" >
+    <ion-text  slot="start"  >{{mensaje.message}}</ion-text>
+  </ion-item>
+</ion-list>
+
+
+</ion-content>
+<ion-footer>
+    <ion-fab edge vertical="bottom" style="margin-left: 5%; width: 90%; margin-bottom: 10%;	 " >
+        <ion-item style="--ion-background-color: #1e1e1e; color:antiquewhite; " >
+      <ion-textarea style=" --border-radius: 25px;" (click)="clearText()" [(ngModel)]="message" autofocus id="textinput" type="text"  style="width: 90%; height: 70%;  font-family: 'Gil Sans';"></ion-textarea>
+   <ion-icon style="color: antiquewhite;"  button (click)="sendMessage();" name='send'></ion-icon>
+  </ion-item>
+    </ion-fab>
+</ion-footer>

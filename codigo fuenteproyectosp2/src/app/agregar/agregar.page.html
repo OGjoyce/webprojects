@@ -1,0 +1,95 @@
+
+<ion-toolbar>
+    
+    <div class="header-menu">
+       <ion-grid>
+         <ion-row>
+           <ion-col>
+               <ion-icon button (click)="handleHome()" name="home" style="color: antiquewhite;"></ion-icon>
+           </ion-col>
+           <!-- <ion-col>
+               <ion-icon button (click)="handleAutenticar()" name="done-all"  style="color: antiquewhite;"></ion-icon>
+           </ion-col> -->
+           <ion-col>
+               <ion-icon button (click)="buscarServicio()" name="search"  style="color: antiquewhite;"></ion-icon>
+           </ion-col>
+           <ion-col>
+               <ion-icon button (click)="ofrecerServicio()" name="add-circle-outline" style="color: antiquewhite;"></ion-icon>
+           </ion-col>
+           <ion-col>
+               <ion-icon button (click)="contactos()" name="people" style="color: antiquewhite;"></ion-icon>
+           </ion-col>
+           <ion-col>
+               <ion-icon (click)="profile(this.key)"  name="person" style="color: antiquewhite;"></ion-icon>
+           </ion-col>
+         </ion-row>
+         <ion-row>
+         </ion-row>
+       </ion-grid>
+   
+   </div>
+   </ion-toolbar>
+
+<ion-content>
+  <div style="margin-top: 10%; margin-left:28%; margin-right: 10%; opacity: 95%;">
+    <ion-text  style="color: #8562b0;">
+        <h1 >HYDRAX</h1>
+      </ion-text>
+    </div>
+
+      <div style="margin-top:20%; margin-left:10%; margin-right: 10%; opacity: 95%;">
+        
+      <ion-item style="--ion-background-color: #1e1e1e; color:#8562b0; border-radius: 25px; margin-bottom: 10px;">
+        <ion-label style="color: #8562b0"  position="floating">Nombre/Titulo</ion-label>
+        <ion-input style="color: antiquewhite;" type="text" [(ngModel)]="titulo" name="titulo"></ion-input>
+      </ion-item>
+      <ion-item style="--ion-background-color: #1e1e1e; color:#8562b0; border-radius: 25px; margin-bottom: 10px;">
+            <ion-label position="floating">Tipo de servicio</ion-label>
+            <ion-select id='selected' >
+              <ion-select-option  *ngFor="let tipo of tipos"  >{{tipo.nombre}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+       <ion-row *ngFor="let products of product">
+      
+                <ion-col size="12" size-md>
+                  <ion-item style="--ion-background-color: #1e1e1e; color:#8562b0; border-radius: 25px; " >
+                      <ion-label style="color: antiquewhite;" position="floating">Producto o servicio</ion-label>
+                    <ion-input style="color: antiquewhite;" [(ngModel)]="products.product" name="product"  ></ion-input>
+                  </ion-item>
+                </ion-col>
+                <ion-col size="12" size-md>
+                    <ion-item style="--ion-background-color: #1e1e1e; color:#8562b0; border-radius: 25px; ">
+                        <ion-label style="color: antiquewhite;" position="floating">Precio</ion-label>
+                      <ion-input style="color: antiquewhite;" [(ngModel)]="products.productDescription" name="productDescription"  ></ion-input>
+                    </ion-item>
+                  </ion-col>
+               
+              </ion-row>
+           
+              <ion-row >
+              <ion-col>  <ion-item button (click)="addRow(this)" style="--background:inherit; color:#8562b0; border-radius: 25px; " align="center">
+            <ion-icon name="add-circle" slot="start" style="color: green;"></ion-icon></ion-item></ion-col>
+              <ion-col algin='center'>
+           </ion-col>
+            <ion-col>  <ion-item button (click)="deleteRow()" style="--background: inherit;">
+            <ion-icon name="close" slot="start" style="color: #a22531;"></ion-icon></ion-item></ion-col>
+            </ion-row>  
+            <div >
+           <ion-item style="--ion-background-color: #1e1e1e; color:#8562b0; border-radius: 25px; ">
+             <ion-grid>
+               <ion-row>
+                <ion-button style="--background: #bb86fc; width:100%;" shape="round" expand="full" ion-button class="register-btn" (click)="openCam()" >Abrir Camara<ion-icon name="camera"></ion-icon></ion-button>
+              </ion-row>
+              <ion-row>
+                <ion-button style="--background: #bb86fc; width: 100%;" shape="round" expand="full" ion-button class="register-btn" (click)='logForm()' >Agregar y Finalizar<ion-icon name="cloud-done"></ion-icon></ion-button>
+              </ion-row>
+              </ion-grid>
+              </ion-item>
+      <ion-item>
+       <img [src]="image" *ngIf="image" alt="base64 image">
+      </ion-item>
+      </div>
+      </div>
+  
+
+</ion-content>

@@ -1,0 +1,62 @@
+<ion-content  >
+  <div style="margin-left: 20%; margin-top: 20%; width: 60%; align-content: center; height: 20%;">
+      <ion-img src="./assets/hydrax_logo.png"  width="15" height="5"></ion-img>
+  </div>
+  <div class="login-register-background">
+   
+      <ion-button  (click)="showLogin();" style="width:100%; margin-top:3%; height:35%; font-size: 14px;" shape="round" fill="solid" size="large" color="dark">Ingresar</ion-button>
+      <ion-button  (click)="showRegister();" style="width:100%; height:35%; font-size: 14px;" shape="round" fill="solid" size="large" color="dark">Registarse</ion-button>
+     
+
+    </div>
+
+    <div id="credentialsContainer" class="login-register-container">
+      <div id="login">
+        <form (ngSubmit)="sendPostRequest()" #registerForm="ngForm">
+        <ion-item style="width: 80%; --background: #1e1e1e; border-radius: 25px; color: antiquewhite;" class="md hydrated"  > 
+            <ion-label style="color: #bb86fc;" position="floating">Usuario</ion-label>
+            <ion-input type="text" name="username" [(ngModel)]="user" required></ion-input>
+          </ion-item>
+          <ion-item style="width: 80%; --background: #1e1e1e; border-radius: 25px; color: antiquewhite;" class="md hydrated"  > 
+              <ion-label style="color: #bb86fc;" position="floating">Contraseña</ion-label>
+              <ion-input type="password" name="password" [(ngModel)]="password" required></ion-input>
+            </ion-item>
+            <ion-button style="--background: #bb86fc;" shape="round" expand="full" ion-button class="register-btn" full type="submit">Ingresar<ion-icon name="arrow-dropright"></ion-icon></ion-button>
+            </form>
+          </div>
+          <div id="register" style="display: none;">
+              <form (ngSubmit)="registerRequest()" #registerForm="ngForm">
+            <ion-item class="md hydrated item-dark" > 
+              <ion-label style="color: #bb86fc;"  position="floating">Nombres</ion-label>
+              <ion-input type="text" name="nombres" [(ngModel)]="nombres" required></ion-input>
+            
+            </ion-item>
+            <ion-item class="md hydrated item-dark" > 
+              <ion-label style="color: #bb86fc;" position="floating">Apellidos</ion-label>
+              <ion-input type="text" name="apellidos" [(ngModel)]="apellidos" required></ion-input>
+            
+            </ion-item>
+            <ion-item class="md hydrated item-dark" > 
+              <ion-label style="color: #bb86fc;" position="floating">Email</ion-label>
+              <ion-input type="email" name="email" [(ngModel)]="email" required></ion-input>
+            
+            </ion-item>
+
+            <ion-item class="md hydrated item-dark">
+                <ion-label style="color: #bb86fc;" position="floating">Password</ion-label>
+              <ion-input type="password" name="password" [(ngModel)]="password" required></ion-input>
+            </ion-item >
+            <ion-item class="md hydrated item-dark">
+              <ion-label style="color: #bb86fc;" position="floating">DPI</ion-label>
+            <ion-input type="number" name="dpi" [(ngModel)]="dpi" required></ion-input>
+          </ion-item>
+          <ion-item class="md hydrated item-dark"> 
+            <ion-label style="color: #bb86fc;" position="floating">No. celular</ion-label>
+          <ion-input type="number" name="cel" [(ngModel)]="cel" required></ion-input>
+        </ion-item>
+        <ion-button style="--background: #bb86fc;" shape="round" expand="full" ion-button class="register-btn" full type="submit" >Registrarse <ion-icon name="arrow-dropright"></ion-icon></ion-button>
+                </form>
+          </div>
+          
+    </div>
+</ion-content>

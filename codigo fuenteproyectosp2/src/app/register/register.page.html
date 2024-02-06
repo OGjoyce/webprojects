@@ -1,0 +1,91 @@
+<script src="https://smtpjs.com/v3/smtp.js">
+</script>
+<ion-header>
+    <ion-icon button (click)="back()" size="large" name="arrow-back" slot="start" style="color: rgb(19, 37, 204);"></ion-icon>
+  <ion-toolbar>
+    <ion-title>
+     <b> Register</b>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="ion-padding">
+    <form (ngSubmit)="registerRequest()" #registerForm="ngForm">
+      <ion-row>
+        <ion-col>
+            <ion-item>
+                <ion-avatar slot="start">
+                  <img src="data:image/png;base64,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">
+                </ion-avatar>
+                <ion-label></ion-label>
+              </ion-item>
+          <ion-list>
+            <ion-item class="md hydrated" > 
+              <ion-label  position="floating">Nombres</ion-label>
+              <ion-input type="text" name="nombres" [(ngModel)]="nombres" required></ion-input>
+            
+            </ion-item>
+            <ion-item class="md hydrated" > 
+              <ion-label  position="floating">Apellidos</ion-label>
+              <ion-input type="text" name="apellidos" [(ngModel)]="apellidos" required></ion-input>
+            
+            </ion-item>
+            <ion-item class="md hydrated" > 
+              <ion-label  position="floating">Email</ion-label>
+              <ion-input type="email" name="email" [(ngModel)]="email" required></ion-input>
+            
+            </ion-item>
+
+            <ion-item>
+                <ion-label  position="floating">Password</ion-label>
+              <ion-input type="password" name="password" [(ngModel)]="password" required></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label  position="floating">DPI</ion-label>
+            <ion-input type="number" name="dpi" [(ngModel)]="dpi" required></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label  position="floating">No. celular</ion-label>
+          <ion-input type="number" name="cel" [(ngModel)]="cel" required></ion-input>
+        </ion-item>
+        <ion-list>
+          <ion-list-header>Municipio de residencia</ion-list-header>
+        
+          <ion-item>
+            <ion-label>Municipios</ion-label>
+            <ion-select id='selected' >
+              <ion-select-option  *ngFor="let municipio of municipios"  >{{municipio.id + '-' +municipio.first}}</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+            </ion-list>
+
+        </ion-col>
+      </ion-row>
+
+      <ion-row>
+        <ion-col>
+        <ion-button color="primary" shape="round" expand="full" ion-button class="register-btn" full type="submit" [disabled]="!registerForm.form.valid"><ion-icon name="body"></ion-icon>Registrarse</ion-button>
+      </ion-col>
+      </ion-row>
+
+    </form>
+    <br><br>
+    <ion-list>
+      <ion-item>
+        <ion-row>
+          <ion-col>
+            <ion-img src="./assets/montsoft.png"  width="15" height="5"></ion-img>
+          </ion-col>
+          <ion-col>
+            <br><br>
+            <ion-img src="http://www.galileo.edu/wp-content/themes/galileo-template/html/img/logo.png"  width="15" height="5" ></ion-img>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+
+    
+  </div>
+</ion-content>

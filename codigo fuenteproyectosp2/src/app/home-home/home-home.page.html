@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-toolbar class="new-background-color">
+        <ion-icon button (click)="back()" size="small" name="arrow-back" slot="start" style="color: rgb(19, 37, 204);"></ion-icon>
+    <ion-title>Nuevos Productos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-list *ngFor='let jsons of json' color="success" >
+<ion-card button (click)="contactar(jsons.Informacion_idInformacion)" >
+  <ion-item>
+    <ion-avatar slot="start">
+      <img src="http://icons.iconarchive.com/icons/papirus-team/papirus-status/256/avatar-default-icon.png">
+    </ion-avatar>
+    <ion-text style="color: #494ca2"><h4>{{jsons.titulo}}</h4></ion-text>
+  </ion-item>
+
+  <ion-card-content  >
+    <ion-grid>
+      <ion-row>
+          <ion-col size="8" size-md>
+              <ion-label style="color:#7c0a02">{{jsons.titulodescripcion}}</ion-label>
+            </ion-col>
+            <ion-col size="4">  
+             <ion-chip>
+                <ion-icon name="stats"></ion-icon>
+                <ion-label>Ranking</ion-label>
+              </ion-chip>
+            </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="6" size-md>
+          <ion-item>
+            <ion-label style="color:#b22222"><h3>{{jsons.producto}}</h3></ion-label>
+          </ion-item>
+        </ion-col>
+        <ion-col size="6" size-md>
+            <ion-item>
+              <ion-text style="color:#f1bc31"><h4>{{jsons.descripcion}}</h4></ion-text>
+            </ion-item>
+          </ion-col>
+      </ion-row>
+        <ion-row>
+    
+              <img src='https://lanzalibre.000webhostapp.com/uploads/{{jsons.nombre_servicio}}'>
+        
+        </ion-row>
+    </ion-grid>
+    
+    
+  </ion-card-content>
+</ion-card>
+</ion-list>
+</ion-content>
